@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Calendário</title>
+    <link rel="stylesheet" href="../../css/calendario_aluno.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../../assets/logo-equipe.png" alt="Logo da academia Iron Fight">
+            </div>
+            <div class="pags">
+                <ul id="ul-header">
+                    <li><a href="aluno.html" class="efeito">Home</a></li>
+                    <li><a href="calendario_aluno.html" class="efeito">Calendário</a></li>
+                    <li><a href="aula_agendada_aluno.html" class="efeito">Aulas Agendadas</a></li>
+                    <li><a href="aula_experimental_aluno.html" class="efeito">Aulas Experimentais</a></li>
+                    <div id="sair">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <li><a href="../home.html" id="link-sair">Sair</a></li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="title">
+            <i class="bi bi-arrow-left-circle" onclick="Voltar()"></i>
+            <h1>calendário</h1>
+        </div>
+    </header>
+
+    <div class="modal-sair" id="modal-sair">
+
+        <div class="modal-content-sair">
+
+
+            <div class="icon-sair">
+                <i class="bi bi-check-lg"></i>
+                <p>Você saiu da sua conta!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <main>
+        <div class="calendario">
+
+            <div class="topo">
+
+                <div class="botoes">
+                    <button id="anterior"><i class="bi bi-chevron-left"></i></button>
+                    <h1 id="mes-ano"></h1>
+                    <button id="proximo"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- <hr> -->
+
+            <div class="dias-semana">
+                <div style="color: red;">Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+            </div>
+
+            <div class="dias" id="dias"></div>
+
+        </div>
+
+
+
+    </main>
+
+    <!-- MODAL JIU JITSU -->
+    <div class="modal-aula" id="modal-jiujitsu">
+
+        <div class="modal-content">
+
+            <span class="fechar" id="fechar-modal-jiujitsu">
+                &times;
+            </span>
+
+            <div class="title-modal">
+                <h3>Jiu Jitsu</h3>
+            </div>
+
+            <hr>
+
+            <div class="informacao-modal">
+                <div class="dados-modal">
+                    <i class="bi bi-clock"></i>
+                    <p><strong>Horário: 10:00 - 11:00</strong></p>
+                </div>
+                <div class="dados-modal">
+                    <i class="bi bi-calendar4"></i>
+                    <p><strong>Data: 25-06-2026</strong> </p>
+                </div>
+                <div class="dados-modal">
+                    <i class="bi bi-people"></i>
+                    <p><strong>Tipo: Agendada</strong> </p>
+                </div>
+                <div class="dados-modal">
+                    <i class="bi bi-people"></i>
+                    <p><strong>Professor: Carlos</strong> </p>
+                </div>
+                <div class="dados-modal">
+                    <i class="bi bi-people"></i>
+                    <p><strong>Alunos: 10</strong> </p>
+                </div>
+            </div>
+
+            <hr>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="logof">
+            <img src="../../assets/logo-equipe.png" alt="Imagem do logo da academia">
+            <h5>academia de artes marciais</h5>
+        </div>
+
+        <div class="conteudof">
+            <div class="cardf">
+                <ul id="lista1">
+                    <li id="titulo">navegue</li>
+                    <li><a href="../home.html" class="efeito">Home</a></li>
+                    <li><a href="../sobrenos.html" class="efeito">Sobre Nós</a></li>
+                    <li><a href="../home.html?#modalidades" class="efeito">Modalidades</a></li>
+                    <li><a href="../matriculese.html" class="efeito">Matricule-se</a></li>
+                    <li><a href="../aluno/aluno.html" class="efeito">Área do Aluno</a></li>
+                    <li><a href="../professor/professor.html" class="efeito">Área do Professor</a></li>
+                </ul>
+            </div>
+
+            <div class="cardf">
+                <ul class="ul-footer">
+                    <li id="titulo">contato</li>
+                    <li class="efeito">ironfight@outlook.com</li>
+                    <li class="efeito">(18) 99999-9999</li>
+                </ul>
+            </div>
+
+            <div class="cardf redes">
+                <ul class="ul-footer">
+                    <li id="titulo">resdes sociais</li>
+                    <li><a href="#" class="efeito">Instagram</a></li>
+                    <li><a href="#" class="efeito">Tik Tok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+
+
+        //MODAL SAIR
+        const modalSair = document.getElementById("modal-sair");
+
+        const linkSair = document.getElementById("link-sair");
+
+
+        // CLICAR EM SAIR
+        linkSair.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            // ABRIR MODAL
+            modalSair.classList.add("active");
+
+
+            // FECHAR APÓS 3 SEGUNDOS
+            setTimeout(() => {
+
+                window.location.href = "../home.html";
+
+            }, 3000);
+
+        });
+
+
+        //FUNÇÃO VOLTAR
+        function Voltar() {
+            window.location.href = "aluno.html"
+        }
+
+
+
+        //MODAL JIU JITSU
+        const modalJiuJitsu = document.getElementById("modal-jiujitsu");
+
+        const fecharModalJiuJitsu = document.getElementById("fechar-modal-jiujitsu");
+
+        fecharModalJiuJitsu.addEventListener("click", () => {
+            modalJiuJitsu.classList.remove("active");
+        });
+
+        modalJiuJitsu.addEventListener("click", (event) => {
+            if (event.target === modalJiuJitsu) {
+                modalJiuJitsu.classList.remove("active");
+            }
+        });
+
+
+        //FUNCÃO DO CALÉNDARIO
+        const diasContainer = document.getElementById("dias");
+
+        const mesAno = document.getElementById("mes-ano");
+
+        const btnAnterior = document.getElementById("anterior");
+
+        const btnProximo = document.getElementById("proximo");
+
+
+        const meses = [
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro"
+        ];
+
+
+        let dataAtual = new Date();
+
+
+        // FUNÇÃO PRINCIPAL (TIPO UMA BIBLIOTECA)
+        function renderizarCalendario() {
+
+            const aulas = JSON.parse(localStorage.getItem("aulas")) || [];
+
+            diasContainer.innerHTML = "";
+
+            const ano = dataAtual.getFullYear();
+
+            const mes = dataAtual.getMonth();
+
+            mesAno.innerHTML = `${meses[mes]} ${ano}`;
+
+            const primeiroDia = new Date(ano, mes, 1).getDay();
+
+            const ultimoDia = new Date(ano, mes + 1, 0).getDate();
+
+            const hoje = new Date();
+
+
+            // ESPAÇOS VAZIOS
+            for (let i = 0; i < primeiroDia; i++) {
+
+                const vazio = document.createElement("div");
+
+                vazio.classList.add("dia", "vazio");
+
+                diasContainer.appendChild(vazio);
+            }
+
+
+            // DIAS DO MÊS
+            for (let dia = 1; dia <= ultimoDia; dia++) {
+
+                const divDia = document.createElement("div");
+
+                divDia.classList.add("dia");
+
+
+                // DOMINGO
+                const diaSemana = new Date(ano, mes, dia).getDay();
+
+                if (diaSemana === 0) {
+
+                    divDia.classList.add("domingo");
+
+                }
+
+
+                // DIA ATUAL
+                if (
+                    dia === hoje.getDate() &&
+                    mes === hoje.getMonth() &&
+                    ano === hoje.getFullYear()
+                ) {
+
+                    divDia.classList.add("hoje");
+
+                }
+
+
+                divDia.innerHTML = `
+            <div class="numero">${dia}</div>
+        `;
+
+                // 25/06/2026 - Jiu Jitsu
+                if (ano === 2026 && mes === 5 && dia === 25) {
+
+                    const evento = document.createElement("div");
+                    evento.classList.add("evento");
+                    evento.textContent = "Jiu Jitsu";
+                    evento.style.cursor = "pointer";
+                    evento.style.height = "30px";
+                    evento.style.background = "#042550";
+                    evento.style.display = "flex";
+                    evento.style.justifyContent = "center";
+                    evento.style.alignItems = "center";
+                    evento.style.color = "#fff";
+                    evento.style.borderRadius = "10px";
+                    evento.style.fontSize = "19px";
+
+                    evento.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        document.getElementById("modal-jiujitsu").classList.add("active");
+
+                    });
+
+                    divDia.appendChild(evento);
+                }
+
+
+                // DATA COMPLETA
+                const dataCompleta = `${ano}-${String(mes + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+
+
+                diasContainer.appendChild(divDia);
+
+            }
+
+        }
+
+
+
+        // BOTÕES DO CALENDÁRIO - SETA PARA PASSAR 
+        btnProximo.addEventListener("click", () => {
+
+            dataAtual.setMonth(dataAtual.getMonth() + 1);
+
+            renderizarCalendario();
+
+        });
+
+
+        btnAnterior.addEventListener("click", () => {
+
+            dataAtual.setMonth(dataAtual.getMonth() - 1);
+
+            renderizarCalendario();
+
+        });
+
+
+        // INICIAR CALENDÁRIO
+        renderizarCalendario();
+    </script>
+</body>
+
+</html>

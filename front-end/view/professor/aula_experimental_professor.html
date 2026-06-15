@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Aulas Experimentais</title>
+    <link rel="stylesheet" href="../../css/aula_experimental_professor.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../../assets/logo-equipe.png" alt="Logo da academia Iron Fight">
+            </div>
+            <div class="pags">
+                <ul id="ul-header">
+                    <li><a href="professor.html" class="efeito">Home</a></li>
+                    <li><a href="calendario_professor.html" class="efeito">Calendário</a></li>
+                    <li><a href="aula_agendada_professor.html" class="efeito">Aulas Agendadas</a></li>
+                    <li><a href="aula_experimental_professor.html" class="efeito">Aulas Experimentais</a></li>
+                    <li><a href="gerenciamento_aluno.html" class="efeito">Gerenciamento de Alunos</a></li>
+                    <li><a href="gerenciamento_professor.html" class="efeito">Gerenciamento de Professores</a></li>
+                    <div id="sair">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <li><a href="../home.html" id="link-sair">Sair</a></li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="title">
+            <i class="bi bi-arrow-left-circle" onclick="Voltar()"></i>
+            <h1>aula experimental</h1>
+        </div>
+    </header>
+
+    <div class="modal-sair" id="modal-sair">
+
+        <div class="modal-content-sair">
+
+
+            <div class="icon-sair">
+                <i class="bi bi-check-lg"></i>
+                <p>Você saiu da sua conta!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <main>
+        <div class="conteudo">
+
+            <div class="filtro">
+                <div class="barra-pesquisa">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="pesquisa-aluno" placeholder="Pesquisar modalidade...">
+                </div>
+                <div class="barra-filtro">
+                    <i class="bi bi-funnel-fill"></i>
+                    <select id="filtro-modalidade">
+                        <option value="">Modalidades</option>
+                        <option value="Boxe">Boxe</option>
+                        <option value="Jiu Jitsu">Jiu Jitsu</option>
+                        <option value="Judô">Judô</option>
+                        <option value="Krav Maga">Krav Maga</option>
+                        <option value="MMA">MMA</option>
+                        <option value="Muay Thai">Muay Thai</option>
+                    </select>
+                </div>
+            </div>
+            <div id="lista-aulas">
+
+                <p id="mensagem-vazia" style="display: none;">
+                    Modalidade não agendada
+                </p>
+                
+                <div class="card-conteudo" id="card-aula"  >
+
+                    <div class="info" id="info-card">
+            
+                        <ul id="ul-conteudo">
+                            <li class="titulo-modalidade" id="card-modalidade">
+                                Boxe
+                            </li>
+                        </ul>
+            
+                        <hr>
+            
+                        <div class="informacoes">
+            
+                            <div class="dados">
+                                <i class="bi bi-calendar4"></i>
+                                <p id="card-data">24-06-2026</p>
+                            </div>
+            
+                            <div class="dados">
+                                <i class="bi bi-clock"></i>
+                                <p id="card-horario">10:00 - 11:00</p>
+                            </div>
+            
+                            <div class="dados">
+                                <i class="bi bi-people"></i>
+                                <p id="card-qtd">10</p>
+                            </div>
+            
+                            <div class="dados">
+                                <i class="bi bi-person"></i>
+                                <p id="card-professor">Carlos</p>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+                    <hr id="hr2">
+            
+                    <br>
+            
+                    <div class="buton">
+            
+                        <button type="button" id="cancelar">
+                            <i class="bi bi-trash"></i>
+                            Cancelar
+                        </button>
+            
+                        <button type="button" id="editar">
+                            <i class="bi bi-pencil"></i>
+                            Editar
+                        </button>
+            
+                    </div>
+            
+                </div>
+            
+            </div>
+            </div>
+
+            </div>
+        
+
+            
+
+        <article>
+            <h2>Agendar Aula Experimental</h2>
+
+            <form action="" method="" id="form-aula">
+                <div class="card-form-aula">
+                    <label for="text">Modalidades:</label>
+                    <select name="modalidades" id="modalidades">
+                        <option value=""></option select>
+                        <option value="Boxe">Boxe</option>
+                        <option value="Jiu Jitsu">Jiu Jitsu</option>
+                        <option value="Judô">Judô</option>
+                        <option value="Krav Maga">Krav Maga</option>
+                        <option value="MMA">MMA</option>
+                        <option value="Muay Thai">Muay Thai</option>
+                    </select>
+
+                    <br>
+
+                    <label for="data">Data:</label>
+                    <input type="date" name="data" id="data">
+
+                    <br>
+
+                    <label for="time">Horário:</label>
+                    <div class="horario">
+                        <input type="time" name="hora-inicial" id="hora-inicial">
+                        <p>as</p>
+                        <input type="time" name="hora-final" id="hora-final">
+                    </div>
+
+                    <br>
+
+                    <label for="qtd">Quantidade de Alunos:</label>
+                    <input type="number" name="qtd" id="qtd">
+
+                    <br>
+
+                    <label for="text">Professor:</label>
+                    <input type="text" name="professor" id="professor">
+
+                </div>
+
+                <div class="buton-form">
+                    <button type="button" id="cancelar-form"><i class="bi bi-trash"></i>Cancelar</button>
+                    <button type="submit" id="salvar-form"><i class="bi bi-floppy"></i>Salvar</button>
+                </div>
+            </form>
+        </article>
+    </main>
+
+    <footer>
+        <div class="logof">
+            <img src="../../assets/logo-equipe.png" alt="Imagem do logo da academia">
+            <h5>academia de artes marciais</h5>
+        </div>
+
+        <div class="conteudof">
+            <div class="cardf">
+                <ul id="lista1">
+                    <li id="titulo">navegue</li>
+                    <li><a href="../home.html" class="efeito">Home</a></li>
+                    <li><a href="../sobrenos.html" class="efeito">Sobre Nós</a></li>
+                    <li><a href="../home.html?#modalidades" class="efeito">Modalidades</a></li>
+                    <li><a href="../matriculese.html" class="efeito">Matricule-se</a></li>
+                    <li><a href="../aluno/aluno.html" class="efeito">Área do Aluno</a></li>
+                    <li><a href="../professor/professor.html" class="efeito">Área do Professor</a></li>
+                </ul>
+            </div>
+
+            <div class="cardf">
+                <ul class="ul-footer">
+                    <li id="titulo">contato</li>
+                    <li class="efeito">ironfight@outlook.com</li>
+                    <li class="efeito">(18) 99999-9999</li>
+                </ul>
+            </div>
+
+            <div class="cardf redes">
+                <ul class="ul-footer">
+                    <li id="titulo">resdes sociais</li>
+                    <li><a href="#" class="efeito">Instagram</a></li>
+                    <li><a href="#" class="efeito">Tik Tok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        //FUNÇÃO VOLTAR
+        function Voltar(){
+            window.location.href = 'professor.html';
+        }
+
+        //MODAL SAIR
+        const modalSair = document.getElementById("modal-sair");
+
+
+        // PESQUISA
+        const pesquisaAluno = document.getElementById("pesquisa-aluno");
+
+        // FILTRO
+        const filtroModalidade = document.getElementById("filtro-modalidade");
+
+        // MENSAGEM
+        const mensagemVazia = document.getElementById("mensagem-vazia");
+
+
+        //FILTRAR AS MODALIDADES OU PESQUISAR
+        function filtrarAulas() {
+
+            const valorPesquisa = pesquisaAluno.value.toLowerCase();
+
+            const valorFiltro = filtroModalidade.value.toLowerCase();
+
+            const cards = document.querySelectorAll(".card-conteudo");
+
+            let cardsVisiveis = 0;
+
+            cards.forEach(card => {
+
+                const modalidade = card
+                    .getAttribute("card-modalidade");
+
+                const correspondePesquisa =
+                    modalidade.includes(valorPesquisa);
+
+                const correspondeFiltro =
+                    valorFiltro === "" ||
+                    modalidade === valorFiltro;
+
+                if (
+                    correspondePesquisa &&
+                    correspondeFiltro
+                ) {
+
+                    card.style.display = "block";
+
+                    cardsVisiveis++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+            // MOSTRAR OU ESCONDER MENSAGEM
+            if (cardsVisiveis === 0) {
+
+                mensagemVazia.style.display = "block";
+
+            } else {
+
+                mensagemVazia.style.display = "none";
+
+            }
+
+        }
+
+        // DIGITAR NA PESQUISA
+        pesquisaAluno.addEventListener("input", filtrarAulas);
+
+        // TROCAR FILTRO
+        filtroModalidade.addEventListener("change", filtrarAulas);
+
+    </script>
+</body>
+
+</html>

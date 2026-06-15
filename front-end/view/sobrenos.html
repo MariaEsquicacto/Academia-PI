@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="../css/sobrenos.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../assets/logo-equipe.png" alt="Logo da academia Iron Fight">
+            </div>
+            <div class="pags">
+                <ul id="ul-header">
+                    <li><a href="home.html" class="efeito">Home</a></li>
+                    <li><a href="sobrenos.html" class="efeito">Sobre-nós</a></li>
+                    <li><a href="home.html?#modalidades" class="efeito">Modalidades</a></li>
+                    <div id="matriculese">
+                        <li><a href="matriculese.html">Matricule-se</a></li>
+                    </div>
+                    <button id="aluno">
+                        Área do Aluno
+                    </button>
+                    <button id="professor">
+                        Área do Professor
+                    </button>
+                </ul>
+            </div>
+        </nav>
+        <div class="title">
+            <i class="bi bi-arrow-left-circle" onclick="Voltar()"></i>
+            <h1>sobre nós</h1>
+        </div>
+    </header>
+
+    <!-- MODAL ALUNO-->
+    <div class="modal-aluno" id="modal-aluno">
+
+        <div class="modal-content">
+
+            <span class="fechar" id="fecharmodal-aluno">
+                &times;
+            </span>
+
+            <form action="" method="" id="form-login">
+                <div class="login">
+                    <h6>Sign In</h6>
+                </div>
+                <div class="card-modal">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email">
+
+                    <br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha">
+
+                    <br>
+
+                    <button type="submit">entrar</button>
+                    <div class="esqueci-senha">
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+                    <br>
+
+                    <hr id="hr-form">
+                    <p>Não possui uma matrícula? <a href="matriculese.html">Matricule-se</a></p>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL PROFESSOR -->
+    <div class="modal-professor" id="modal-professor">
+
+        <div class="modal-content">
+
+            <span class="fechar" id="fecharmodal-professor">
+                &times;
+            </span>
+
+            <form action="" method="" id="form-login-professor">
+                <div class="login">
+                    <h6>Sign In</h6>
+                </div>
+                <div class="card-modal">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email-professor">
+
+                    <br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha-professor">
+
+                    <br>
+
+                    <button type="submit">entrar</button>
+                    <div class="esqueci-senha">
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+                    <br>
+
+                    <hr id="hr-form">
+                    <p>Não possui uma matrícula? <a href="matriculese.html">Matricule-se</a></p>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <main>
+        <div class="conteudo">
+            <div class="cima">
+                <div class="historia">
+                    <p>A Iron Fight é uma academia especializada em artes marciais, fundada em Presidente Prudente no
+                        ano de
+                        2008 por Carlos Ray Norris, empresário e entusiasta das lutas, com o propósito de oferecer um
+                        ambiente de alto nível para formação técnica, física e disciplinar de seus praticantes.</p>
+                </div>
+                <div class="imagem-academia">
+                    <img src="../assets/espaco_academia.png" alt="Imagem da academia">
+                </div>
+            </div>
+
+            <div class="baixo">
+                <div class="imagem-academia">
+                    <img src="../assets/espaco_academia.png" alt="Imagem da academia">
+                </div>
+                <div class="historia">
+                    <p><strong>Missão</strong>: formar praticantes e atletas com ensino técnico de qualidade, promovendo
+                        desenvolvimento
+                        físico, mental e comportamental. <br>
+                        <strong>Visão</strong>: ser referência em artes marciais, sempre evoluindo com novas ideias e
+                        métodos. <br>
+                        <strong>Valores</strong>: respeito, disciplina, superação, comprometimento e evolução contínua.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <div class="professores">
+            <div class="title-professores">
+                <h2>
+                    Conheça os <br>
+                    nossos(as) <span>PROFESSORES</span>
+                </h2>
+            </div>
+
+            <div class="imagem-professores">
+                <div class="professor boxe"><button id="butonboxe"><img src="../assets/pofessor-boxe.jpg"></button>
+                </div>
+                <div class="professor jj"><button id="butonjj"><img src="../assets/professora-jj.jpg"></button></div>
+                <div class="professor mt"><button id="butonmt"><img src="../assets/professor-mt.jpg"></button></div>
+            </div>
+
+            <!-- MODAL BOXE -->
+            <div class="esconder" id="conteudoboxe-modal">
+                <div class="ct">
+                    <h4><strong style="text-transform: uppercase; font-weight: 600;">professor(a)</strong>: Pedro
+                        Augusto</h4>
+                    <p>Professor(a) de Boxe a 25 anos - estando a 15 anos com a academia Iron Fight - nasceu no meio do
+                        Boxe e tem muita paixão pela luta</p>
+                </div>
+            </div>
+
+            <!-- MODAL JIU JITSU -->
+            <div class="esconder" id="conteudojj-modal">
+                <div class="ct">
+                    <h4><strong style="text-transform: uppercase; font-weight: 600;">professor(a)</strong>: Ana Carolina
+                    </h4>
+                    <p>Professor(a) de Jiu Jitsu a 2 anos - iniciou na academia Iron Fight - nasceu no meio do Jiu Jitsu
+                        e tem muita paixão pela luta</p>
+                </div>
+            </div>
+
+            <!-- MODAL MUAY THAI -->
+            <div class="esconder" id="conteudomt-modal">
+                <div class="ct">
+                    <h4><strong style="text-transform: uppercase; font-weight: 600;">professor(a)</strong>: Lucas</h4>
+                    <p>Professor(a) de Muay Thai a 10 anos - estando a 5 anos com a academia Iron Fight - nasceu no meio
+                        do Muay Thai e tem muita paixão pela luta</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="imagem-professores2">
+                <div class="professor mma"><button id="butonmma"><img src="../assets/professor-mma.jpg"></button></div>
+                <div class="professor judo"><button id="butonjudo"><img src="../assets/professor-judo.jpg"></button>
+                </div>
+                <div class="professor km"><button id="butonkm"><img src="../assets/professor-km.jpg"></button></div>
+            </div>
+
+            <!-- MODAL MMA -->
+            <div class="esconder" id="conteudomma-modal">
+                <div class="ct">
+                    <h4><strong style="text-transform: uppercase; font-weight: 600;">professor(a)</strong>: Fernando
+                    </h4>
+                    <p>Professor(a) de MMA a 3 anos - iniciou na academia Iron Fight - nasceu no meio do MMA e tem muita
+                        paixão pela luta</p>
+                </div>
+            </div>
+
+            <!-- MODAL JUDO -->
+            <div class="esconder" id="conteudojudo-modal">
+                <div class="ct">
+                    <h4><strong style="text-transform: uppercase; font-weight: 600;">professor(a)</strong>: Carlos</h4>
+                    <p>Professor(a) de Judô a 9 anos - estando a 1 ano com a academia Iron Fight - nasceu no meio do
+                        Judô e tem muita paixão pela luta</p>
+                </div>
+            </div>
+
+            <!-- MODAL KRAV MAGA -->
+            <div class="esconder" id="conteudokm-modal">
+                <div class="ct">
+                    <h4><strong style="text-transform: uppercase; font-weight: 600;">professor(a)</strong>: Felipe</h4>
+                    <p>Professor(a) de Krav Maga a 30 anos - estando a 10 anos com a academia Iron Fight - nasceu no
+                        meio do Krav Maga e tem muita paixão pela luta</p>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <div class="espaco">
+            <div class="title-espaco">
+                <h2>
+                    Conheça <br>
+                    nosso <span>ESPAÇO</span>
+                </h2>
+            </div>
+
+            <div class="localizacao">
+                <i class="bi bi-geo-alt"></i>
+                <h5>localização:</h5>
+                <p>RUA: Antônio Rodrigues, BAIRRO: Tropical, Presidente Prudente, n° 3597</p>
+            </div>
+
+            <div class="imagem-espaco">
+                <div class="card-espaco">
+                    <div class="image">
+                        <img src="../assets/sala-boxe.jpg" alt="Sala de Boxe">
+                    </div>
+                    <p><strong style="text-transform: uppercase;">espaço</strong>: Sala de Boxe</p>
+                </div>
+
+                <div class="card-espaco">
+                    <div class="image">
+                        <img src="../assets/sala-jj.jpg" alt="Sala de Jiu Jitsu">
+                    </div>
+                    <p><strong style="text-transform: uppercase;">espaço</strong>: Sala de Jiu Jitsu</p>
+                </div>
+
+                <div class="card-espaco">
+                    <div class="image">
+                        <img src="../assets/sala-mt.jpg" alt="Sala de Muay Thai">
+                    </div>
+                    <p><strong style="text-transform: uppercase;">espaço</strong>: Sala de Muay Thai</p>
+                </div>
+            </div>
+
+            <div class="imagem-espaco">
+                <div class="card-espaco">
+                    <div class="image">
+                        <img src="../assets/sala-mma.jpg" alt="Sala de MMA">
+                    </div>
+                    <p><strong style="text-transform: uppercase;">espaço</strong>: Sala de MMA</p>
+                </div>
+
+                <div class="card-espaco">
+                    <div class="image">
+                        <img src="../assets/sala-judo.jpg" alt="Sala de Judô">
+                    </div>
+                    <p><strong style="text-transform: uppercase;">espaço</strong>: Sala de Judô</p>
+                </div>
+
+                <div class="card-espaco">
+                    <div class="image">
+                        <img src="../assets/sala-km.jpg" alt="Sala de Krav Maga">
+                    </div>
+                    <p><strong style="text-transform: uppercase;">espaço</strong>: Sala de Krav Maga</p>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+        <br>
+        <br>
+
+    </main>
+
+    <footer>
+        <div class="logof">
+            <img src="../assets/logo-equipe.png" alt="Imagem do logo da academia">
+            <h5>academia de artes marciais</h5>
+        </div>
+
+        <div class="conteudof">
+            <div class="cardf">
+                <ul id="lista1">
+                    <li id="titulo">navegue</li>
+                    <li><a href="home.html" class="efeito">Home</a></li>
+                    <li><a href="sobrenos.html" class="efeito">Sobre Nós</a></li>
+                    <li><a href="modalidades.html" class="efeito">Modalidades</a></li>
+                    <li><a href="matriculese.html" class="efeito">Matricule-se</a></li>
+                    <li><a href="aluno.html" class="efeito">Área do Aluno</a></li>
+                    <li><a href="professor.html" class="efeito">Área do Professor</a></li>
+                </ul>
+            </div>
+
+            <div class="cardf">
+                <ul class="ul-footer">
+                    <li id="titulo">contato</li>
+                    <li class="efeito">ironfight@outlook.com</li>
+                    <li class="efeito">(18) 99999-9999</li>
+                </ul>
+            </div>
+
+            <div class="cardf redes">
+                <ul class="ul-footer">
+                    <li id="titulo">resdes sociais</li>
+                    <li><a href="#" class="efeito">Instagram</a></li>
+                    <li><a href="#" class="efeito">Tik Tok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        //FUNÇÃO VOLTAR
+        function Voltar() {
+            window.location.href = "home.html"
+        }
+
+
+        // MODAL DOS PROFESSORES
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        const botao_boxe = document.querySelector("#butonboxe");
+        const boxe_modal = document.querySelector("#conteudoboxe-modal");
+
+        if (botao_boxe) {
+            botao_boxe.addEventListener('click', () => {
+                boxe_modal.classList.toggle("esconder");
+            });
+        }
+
+        const botao_jj = document.querySelector("#butonjj");
+        const jj_modal = document.querySelector("#conteudojj-modal");
+
+        if (botao_jj) {
+            botao_jj.addEventListener('click', () => {
+                jj_modal.classList.toggle("esconder")
+            });
+        }
+
+
+        const botao_mt = document.querySelector("#butonmt");
+        const mt_modal = document.querySelector("#conteudomt-modal");
+
+        if (botao_mt) {
+            botao_mt.addEventListener('click', () => {
+                mt_modal.classList.toggle("esconder")
+            });
+        }
+
+        const botao_mma = document.querySelector("#butonmma");
+        const mma_modal = document.querySelector("#conteudomma-modal");
+
+        if (botao_mma) {
+            botao_mma.addEventListener('click', () => {
+                mma_modal.classList.toggle("esconder")
+            });
+        }
+
+        const botao_judo = document.querySelector("#butonjudo");
+        const judo_modal = document.querySelector("#conteudojudo-modal");
+
+        if (botao_judo) {
+            botao_judo.addEventListener('click', () => {
+                judo_modal.classList.toggle("esconder")
+            });
+        }
+
+        const botao_km = document.querySelector("#butonkm");
+        const km_modal = document.querySelector("#conteudokm-modal");
+
+        if (botao_km) {
+            botao_km.addEventListener('click', () => {
+                km_modal.classList.toggle("esconder")
+            });
+        }
+
+
+
+        // MODAL PARA ABRIR O ÁREA ALUNO
+
+        const modalAluno = document.getElementById("modal-aluno");
+
+        const abrirModalAluno = document.getElementById("aluno");
+
+        const fecharModalAluno = document.getElementById("fecharmodal-aluno");
+
+        // ABRIR MODAL
+        abrirModalAluno.addEventListener("click", () => {
+            modalAluno.classList.add("active");
+        });
+
+        // FECHAR MODAL
+        fecharModalAluno.addEventListener("click", () => {
+            modalAluno.classList.remove("active");
+        });
+
+        // FECHAR AO CLICAR FORA
+        modalAluno.addEventListener("click", (event) => {
+
+            if (event.target === modalAluno) {
+                modalAluno.classList.remove("active");
+            }
+
+        });
+
+
+        // LOGIN
+        const form = document.getElementById("form-login");
+
+        form.addEventListener("submit", function (event) {
+
+            // impede recarregar
+            event.preventDefault();
+
+           
+                window.location.href = "aluno/aluno.html";
+           
+
+        });
+
+        // MODAL PARA ABRIR O ÁREa PROFESSOR
+
+        const modalProfessor = document.getElementById("modal-professor");
+
+        const abrirModalProfessor = document.getElementById("professor");
+
+        const fecharModalProfessor = document.getElementById("fecharmodal-professor");
+
+        // ABRIR
+        abrirModalProfessor.addEventListener("click", () => {
+
+            modalProfessor.classList.add("active");
+
+        });
+
+        // FECHAR
+        fecharModalProfessor.addEventListener("click", () => {
+
+            modalProfessor.classList.remove("active");
+
+        });
+
+        // FECHAR CLICANDO FORA
+        modalProfessor.addEventListener("click", (event) => {
+
+            if (event.target === modalProfessor) {
+
+                modalProfessor.classList.remove("active");
+
+            }
+
+        });
+
+        
+
+        // LOGIN PROFESSOR
+        const formProfessor = document.getElementById("form-login-professor");
+
+
+        formProfessor.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+           
+            window.location.href = "professor/professor.html";
+
+            
+        });
+
+
+    </script>
+</body>
+
+</html>

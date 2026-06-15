@@ -1,0 +1,616 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inria Sans", sans-serif;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/imagem-header.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: 0.4;  */
+    filter: brightness(80%);
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.pags {
+    min-width: 50%;
+    margin-bottom: 3%;
+}
+
+#ul-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+#ul-header li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.efeito{
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in-out;
+}
+
+.efeito:hover{
+    border-bottom: 2px solid #fff;
+}
+
+#matriculese {
+    background-color: #fff;
+    border-radius: 0px 10px 0px 10px;
+    width: 115px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+
+#aluno, #professor {
+    background-color: #3B8962;
+    width: 130px;
+    border-radius: 0px 10px 0px 10px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    /* font-weight: 550; */
+
+}
+
+#professor{
+    width: 160px;
+}
+
+
+#matriculese li a {
+    color: #000;
+}
+
+.title{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.title h1{
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fff;
+    font-size: 26px;
+}
+
+.title i{
+    color: #fff;
+    font-size: 26px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.modal-aluno, .modal-professor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00000099;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+
+.modal-aluno.active, .modal-professor.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-content{
+    width: 600px;
+    height: 430px;
+    background: #1D1D1D;
+    border: 6px solid #3B8962;
+    padding: 30px;
+    position: relative;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer{
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.fechar{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.fechar:hover{
+    color: #3B8962;
+}
+
+
+.login-modal{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-modal h6{
+    font-size: 28px;
+    color: #3B8962;
+}
+
+
+.card-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.card-modal label{
+    margin-bottom: 5px;
+    color: #ffffff;
+    margin-left: 0;
+    font-size: 18px;
+}
+
+.card-modal input{
+    width: 70%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.card-modal input:focus{
+    border-color: #3B8962;
+    box-shadow: 0 0 5px rgba(59, 137, 98, 0.5);
+}
+
+
+.card-modal button{
+    width: 80%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #3B8962;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.card-modal button:hover{
+    background: #2f6d4f;
+}
+
+
+.esqueci-senha{
+    width: 70%;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.esqueci-senha a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+
+.card-modal p{
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 2%;
+}
+
+.card-modal p a{
+    color: #3B8962;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-modal p a:hover{
+    text-decoration: underline;
+}
+
+#hr-form{
+    margin-top: 4%;
+}
+
+#hr-modal{
+    width: 70%;
+    margin-top: 4%;
+}
+
+.card-modal label,
+.card-modal input,
+.card-modal button,
+.esqueci-senha,
+#hr-form,
+.card-modal p{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-concluir{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00000099;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+
+.modal-concluir.active{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+
+.modal-content-concluir{
+    width: 400px;
+    height: 300px;
+    background: #1D1D1D;
+    border: 6px solid #3B8962;
+    padding: 30px;
+    position: relative;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer{
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.concluir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.concluir i{
+    color: #3B8962;
+    font-size: 130px;
+}
+
+.concluir p{
+    font-size: 26px;
+    color: #fff;
+    margin-top: 5%;
+}
+
+/* MAIN */
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-pagina{
+    width: 60%;
+    height: auto;
+    box-shadow: 1px 2px 6px #858585;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto-formulario{
+    width: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.foto{
+    width: 160px;
+    height: 160px;
+    background-color: #c9c9c9;
+    border-radius: 50%;
+    border: 2px solid #1D1D1D;
+}
+
+#button-foto{
+    margin: 10px;
+    margin-left: 10%;
+    font-size: 13px;
+    border: none;
+    background-color: #6C6C6C;
+    border-radius: 5px;
+    width: 120px;
+    height: 20px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#button-foto:hover{
+    transform: scale(1.03);
+}
+
+
+#hr-pagina{
+    width: 90%;
+    margin-top: 5%;
+    height: 1px;
+    background-color: #3B8962;
+}
+
+.card-formulario{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3%;
+}
+
+
+.card{
+    width: 70%;
+    border: none;
+    width: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+
+input, select{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+    width: 90%;
+    font-size: 16px;
+}
+
+
+label{
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+#hr-button{
+    margin-top: 4%;
+}
+
+.buton{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.buton button{
+    border: none;
+    color: #fff;
+    height: 35px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.buton button:hover{
+    box-shadow: 1px 2px 5px #1D1D1D;
+}
+
+.buton button i{
+    margin: 5px;
+    font-size: 16px;
+}
+
+#cancelar{
+    background-color: #9c0000;
+    width: 110px;
+}
+
+#salvar{
+    background-color: #3B8962;
+    width: 100px;
+}
+
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    height: 470px;
+    background-color: #1D1D1D;
+    margin-top: 4%;
+}
+
+.logof{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logof h5{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logof img{
+    width: 140px;
+    height: 140px;
+}
+
+
+.conteudof{
+    width: 98%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2%;
+}
+
+.cardf{
+    width: 33%;
+    padding: 20px;
+}
+
+#lista1, .ul-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+#lista1{
+    align-items: flex-start;
+}
+
+.ul-footer{
+    align-items: center;
+}
+
+.redes{
+    display: flex;
+    justify-content: flex-end;
+}
+
+li, a{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#titulo{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+

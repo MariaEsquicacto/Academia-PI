@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Matricule-se</title>
+    <link rel="stylesheet" href="../css/matriculese.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../assets/logo-equipe.png" alt="Logo da academia Iron Fight">
+            </div>
+            <div class="pags">
+                <ul id="ul-header">
+                    <li><a href="home.html" class="efeito">Home</a></li>
+                    <li><a href="sobrenos.html" class="efeito">Sobre-nós</a></li>
+                    <li><a href="home.html?#modalidades" class="efeito">Modalidades</a></li>
+                    <div id="matriculese">
+                        <li><a href="matriculese.html">Matricule-se</a></li>
+                    </div>
+                    <button id="aluno">
+                        Área do Aluno
+                    </button>
+                    <button id="professor">
+                        Área do Professor
+                    </button>
+                </ul>
+            </div>
+        </nav>
+        <div class="title">
+            <i class="bi bi-arrow-left-circle" onclick="Voltar()"></i>
+            <h1>matricule-se</h1>
+        </div>
+    </header>
+
+    <!-- MODAL ALUNO-->
+    <div class="modal-aluno" id="modal-aluno">
+
+        <div class="modal-content">
+
+            <span class="fechar" id="fecharmodal-aluno">
+                &times;
+            </span>
+
+            <form action="" method="" id="form-login">
+                <div class="login-modal">
+                    <h6>Sign In</h6>
+                </div>
+                <div class="card-modal">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email">
+
+                    <br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha">
+
+                    <br>
+
+                    <button type="submit">entrar</button>
+                    <div class="esqueci-senha">
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+
+                    <br>
+
+                    <hr id="hr-modal">
+                    <p>Não possui uma matrícula? <a href="matriculese.html">Matricule-se</a></p>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL PROFESSOR -->
+    <div class="modal-professor" id="modal-professor">
+
+        <div class="modal-content">
+
+            <span class="fechar" id="fecharmodal-professor">
+                &times;
+            </span>
+
+            <form action="" method="" id="form-login-professor">
+                <div class="login-modal">
+                    <h6>Sign In</h6>
+                </div>
+                <div class="card-modal">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email-professor">
+
+                    <br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha-professor">
+
+                    <br>
+
+                    <button type="submit">entrar</button>
+                    <div class="esqueci-senha">
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+                    <br>
+
+                    <hr id="hr-modal">
+                    <p>Não possui uma matrícula? <a href="matriculese.html">Matricule-se</a></p>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <main>
+        <form action="" method="" class="form-pagina">
+
+            <div class="card-formulario">
+                <div class="foto-formulario">
+                    <div class="foto"></div>
+                    <button type="submit" id="button-foto">Adicionar/Alterar</button>
+                </div>
+
+                <div class="card">
+                    <label for="text">Nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo">
+
+                    <br>
+
+                    <label for="date">Data de Nascimento:</label>
+                    <input type="date" name="nascimento" id="nascimento">
+
+                    <br>
+
+                    <label for="select">Modalidades:</label>
+                    <select name="modalidades" id="modalidades">
+                        <option value=""></option select>
+                        <option value="Boxe">Boxe</option>
+                        <option value="Jiu Jitsu">Jiu Jitsu</option>
+                        <option value="Judô">Judô</option>
+                        <option value="Krav Maga">Krav Maga</option>
+                        <option value="MMA">MMA</option>
+                        <option value="Muay Thai">Muay Thai</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr id="hr-pagina">
+
+            <div class="card-formulario">
+                <div class="card">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email1" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        placeholder="Digite seu e-mail">
+
+                    <br>
+
+                    <label for="tell">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" title=“(99)
+                        99999-9999” placeholder="Digite seu número de telefone">
+                </div>
+
+                <div class="card">
+                    <label for="text">Endereço:</label>
+                    <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço">
+
+                    <br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha1" id="senha">
+
+                </div>
+            </div>
+
+
+
+            <br>
+
+            <div class="buton">
+                <button id="cancelar"><i class="bi bi-trash"></i>Cancelar</button>
+                <button type="submit" id="salvar" class="link-sair"><i class="bi bi-floppy"></i>Salvar</button>
+            </div>
+        </form>
+    </main>
+
+    <div class="modal-concluir" id="modal-concluir">
+
+        <div class="modal-content-concluir">
+
+
+            <div class="concluir">
+                <i class="bi bi-check-lg"></i>
+                <p>Matrícula realizada com sucesso!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="logof">
+            <img src="../assets/logo-equipe.png" alt="Imagem do logo da academia">
+            <h5>academia de artes marciais</h5>
+        </div>
+
+        <div class="conteudof">
+            <div class="cardf">
+                <ul id="lista1">
+                    <li id="titulo">navegue</li>
+                    <li><a href="home.html" class="efeito">Home</a></li>
+                    <li><a href="sobrenos.html" class="efeito">Sobre Nós</a></li>
+                    <li><a href="modalidades.html" class="efeito">Modalidades</a></li>
+                    <li><a href="matriculese.html" class="efeito">Matricule-se</a></li>
+                    <li><a href="aluno.html" class="efeito">Área do Aluno</a></li>
+                    <li><a href="professor.html" class="efeito">Área do Professor</a></li>
+                </ul>
+            </div>
+
+            <div class="cardf">
+                <ul class="ul-footer">
+                    <li id="titulo">contato</li>
+                    <li class="efeito">ironfight@outlook.com</li>
+                    <li class="efeito">(18) 99999-9999</li>
+                </ul>
+            </div>
+
+            <div class="cardf redes">
+                <ul class="ul-footer">
+                    <li id="titulo">resdes sociais</li>
+                    <li><a href="#" class="efeito">Instagram</a></li>
+                    <li><a href="#" class="efeito">Tik Tok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // MODAL PARA ABRIR O ÁREa PROFESSOR
+        // MODAL PROFESSOR
+
+        const modalProfessor = document.getElementById("modal-professor");
+
+        const abrirModalProfessor = document.getElementById("professor");
+
+        const fecharModalProfessor = document.getElementById("fecharmodal-professor");
+
+
+        // ABRIR
+        abrirModalProfessor.addEventListener("click", () => {
+
+            modalProfessor.classList.add("active");
+
+        });
+
+
+        // FECHAR
+        fecharModalProfessor.addEventListener("click", () => {
+
+            modalProfessor.classList.remove("active");
+
+        });
+
+
+        // FECHAR CLICANDO FORA
+        modalProfessor.addEventListener("click", (event) => {
+
+            if (event.target === modalProfessor) {
+
+                modalProfessor.classList.remove("active");
+
+            }
+
+        });
+
+        // MODAL PARA ABRIR O ÁREA ALUNO
+
+        const modalAluno = document.getElementById("modal-aluno");
+
+        const abrirModalAluno = document.getElementById("aluno");
+
+        const fecharModalAluno = document.getElementById("fecharmodal-aluno");
+
+        // ABRIR MODAL
+        abrirModalAluno.addEventListener("click", () => {
+            modalAluno.classList.add("active");
+        });
+
+        // FECHAR MODAL
+        fecharModalAluno.addEventListener("click", () => {
+            modalAluno.classList.remove("active");
+        });
+
+        // FECHAR AO CLICAR FORA
+        modalAluno.addEventListener("click", (event) => {
+
+            if (event.target === modalAluno) {
+                modalAluno.classList.remove("active");
+            }
+
+        });
+
+        //FUNÇÃO VOLTAR
+
+        function Voltar() {
+            window.location.href = "home.html";
+        }
+
+        const formulario = document.querySelector(".form-pagina");
+        const modalConcluir = document.getElementById("modal-concluir");
+
+
+        // CADASTRO
+        formulario.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nome = document.getElementById("nome").value.trim();
+            const nascimento = document.getElementById("nascimento").value.trim();
+            const modalidade = document.getElementById("modalidades").value.trim();
+            const email = document.querySelector(".form-pagina input[type='email']").value.trim();
+            const telefone = document.getElementById("telefone").value.trim();
+            const endereco = document.getElementById("endereco").value.trim();
+            const senha = document.querySelector(".form-pagina input[type='password']").value.trim();
+
+            if (!nome || !nascimento || !modalidade || !email || !telefone || !endereco || !senha) {
+                alert("Preencha todos os campos!");
+                return;
+            }
+
+
+            modalConcluir.classList.add("active");
+
+            formulario.reset();
+
+            setTimeout(() => {
+                modalConcluir.classList.remove("active");
+            }, 2000);
+        });
+
+
+        //LOGIN ALUNO
+        const formLoginAluno = document.getElementById("form-login");
+
+    formLoginAluno.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+    
+         window.location.href = "aluno/aluno.html"; 
+      
+    });
+
+        // LOGIN PROFESSOR
+        const formProfessor = document.getElementById("form-login-professor");
+
+
+        formProfessor.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+                window.location.href = "professor/professor.html";
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>

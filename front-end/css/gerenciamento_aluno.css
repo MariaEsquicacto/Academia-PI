@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/imagem-header.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: 0.4;  */
+    filter: brightness(80%);
+    z-index: -1;
+}
+
+nav {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.pags {
+    min-width: 40%;
+    margin-bottom: 3%;
+}
+
+#ul-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+#ul-header li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.efeito{
+    border-bottom: 2px solid transparent;
+    transition: 0.2s ease-in-out;
+}
+
+.efeito:hover{
+    border-bottom: 2px solid #fff;
+}
+
+#sair {
+    background-color: #3B8962;
+    border-radius: 0px 10px 0px 10px;
+    width: 80px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#sair i{
+    color: #fff;
+    margin: 5px;
+}
+
+.title{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.title h1{
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.title i{
+    color: #fff;
+    font-size: 26px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+.modal-sair{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00000099;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+
+.modal-sair.active{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+
+.modal-content-sair{
+    width: 400px;
+    height: 300px;
+    background: #1D1D1D;
+    border: 6px solid #3B8962;
+    padding: 30px;
+    position: relative;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer{
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.icon-sair{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon-sair i{
+    color: #3B8962;
+    font-size: 130px;
+}
+
+.icon-sair p{
+    font-size: 26px;
+    color: #fff;
+    margin-top: 5%;
+}
+/* MAIN */
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.conteudo{
+    width: 55%;
+    height: auto;
+}
+
+.pesquisa{
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra-pesquisa{
+    width: 100%;
+    height: 32px;
+    border: 1.5px solid #d1d1d1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    background-color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#pesquisa-aluno, #pesquisa-professor{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+
+.barra-pesquisa i{
+    color: #7a7a7a;
+    font-size: 16px;
+}
+
+.barra-pesquisa p{
+    margin: 0;
+    font-size: 14px;
+    color: #7a7a7a;
+    font-weight: 500;
+}
+
+.tabela-container{
+    width: 100%;
+    max-height: 420px;
+    overflow-y: auto;
+    margin-top: 4%;
+    border-radius: 10px;
+}
+
+.tabela-usuarios, .tabela-professor {
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px !important;
+    margin-top: 0;
+    overflow: hidden;
+    border-collapse: separate; /* Garante que o navegador aceite o radius */
+    border-spacing: 0;
+}
+
+
+.tabela-usuarios thead, .tabela-professor thead {
+    background-color: #e0e0e0; 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tabela-usuarios th, .tabela-professor th {
+    padding: 10px 22px;
+    text-align: start;
+    font-weight: 500;
+    color: #212529;
+    position: relative;
+    font-size: 19px;
+    background-color: #e0e0e0; 
+}
+
+
+.tabela-usuarios td, .tabela-professor td {
+    padding: 14px 25px;
+    border-bottom: 1px solid #3a3a3a;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.tabela-usuarios tbody tr:last-child td, .tabela-professor tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#nome{
+    width: 160px;
+}
+
+#email{
+    width: 160px;
+}
+
+#acao{
+    text-align: center;
+    width: 50px;
+}
+
+
+.btn-acao {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; 
+    padding: 4px 8px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-acao:hover {
+    opacity: 0.7;
+}
+
+
+.btn-editar {
+    color: #857223; 
+    margin-right: 8px;
+}
+
+.btn-excluir, .btn-excluir-professor {
+    color: #A51313; 
+}
+
+
+
+article{
+    width: 30%;
+    border: 1px solid #393939;
+    border-radius: 5px;
+    height: 610px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+article h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 3%;
+}
+
+#form-aluno{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+#form-aluno label{
+    font-size: 15px;
+    margin-bottom: 3px;
+    font-weight: 400;
+}
+
+#form-aluno input, #input-modalidade, #input-funcao{
+    height: 30px;
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    font-size: 14px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.buton-form{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.buton-form button{
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 30px;
+    width: 110px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+    margin: 5px;
+}
+
+.buton-form button i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+#cancelar-form{
+    background-color: #A51313;
+}
+
+#salvar-form{
+    background-color: #3B8962;
+    width: 120px;
+}
+
+#cancelar-form:hover, #salvar-form:hover{
+    box-shadow: 1px 2px 5px #1D1D1D;
+}
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    height: 470px;
+    background-color: #1D1D1D;
+    margin-top: 8%;
+}
+
+.logof{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logof h5{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logof img{
+    width: 140px;
+    height: 140px;
+}
+
+
+.conteudof{
+    width: 98%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2%;
+}
+
+.cardf{
+    width: 33%;
+    padding: 20px;
+}
+
+#lista1, .ul-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+#lista1{
+    align-items: flex-start;
+}
+
+.ul-footer{
+    align-items: center;
+    cursor: pointer;
+}
+
+.redes{
+    display: flex;
+    justify-content: flex-end;
+}
+
+li, a{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#ul-footer li{
+    cursor: pointer;
+}
+
+
+#titulo{
+    text-transform: uppercase;
+    font-weight: 600;
+}
