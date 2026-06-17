@@ -322,9 +322,9 @@
 
         // CADASTRO
         formulario.addEventListener("submit", function (e) {
-            e.preventDefault();
+            e.preventDefault(); // pagina nao recarregar
 
-            const nome = document.getElementById("nome").value.trim();
+            const nome = document.getElementById("nome").value.trim(); // remove os valores extras (trim)
             const nascimento = document.getElementById("nascimento").value.trim();
             const modalidade = document.getElementById("modalidades").value.trim();
             const email = document.querySelector(".form-pagina input[type='email']").value.trim();
@@ -332,17 +332,18 @@
             const endereco = document.getElementById("endereco").value.trim();
             const senha = document.querySelector(".form-pagina input[type='password']").value.trim();
 
+            // identifica se o campo está vazio
             if (!nome || !nascimento || !modalidade || !email || !telefone || !endereco || !senha) {
                 alert("Preencha todos os campos!");
                 return;
             }
 
-
+            // apos preencher todos os campos vai ser criado a classe "active"
             modalConcluir.classList.add("active");
 
-            formulario.reset();
+            formulario.reset(); // limpa o formulario
 
-            setTimeout(() => {
+            setTimeout(() => { // temporizador, (função e o tempo) / esperar 2 segundos, vai remover o "active" e depois fehar o modal
                 modalConcluir.classList.remove("active");
             }, 2000);
         });

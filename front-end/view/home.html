@@ -224,19 +224,19 @@
 
 
         // MODAL PARA ABRIR O ÁREA ALUNO
-
+        // pega os elementos do html pelo id
         const modalAluno = document.getElementById("modal-aluno");
-
-        const abrirModalAluno = document.getElementById("aluno");
-
+        const abrirModalAluno = document.getElementById("aluno"); //abre o modal quando clica no botao com o id aluno no header
         const fecharModalAluno = document.getElementById("fecharmodal-aluno");
 
         // ABRIR MODAL
+        // quando o usuario clica no botao com  id "aluno" o evento "click" é disparado e a classe "active" é add ao modal
         abrirModalAluno.addEventListener("click", () => {
             modalAluno.classList.add("active");
         });
 
-        // FECHAR MODAL
+        // FECHAR 
+        // quando o usuario clica para sair do modal a classe "active" é excluida
         fecharModalAluno.addEventListener("click", () => {
             modalAluno.classList.remove("active");
         });
@@ -251,9 +251,8 @@
         });
 
 
-        // LOGIN
+        // LOGIN ALUNO
         const form = document.getElementById("form-login");
-
         form.addEventListener("submit", function (event) {
 
             // impede recarregar
@@ -267,11 +266,8 @@
 
 
         // MODAL PARA ABRIR O ÁREa PROFESSOR
-
         const modalProfessor = document.getElementById("modal-professor");
-
         const abrirModalProfessor = document.getElementById("professor");
-
         const fecharModalProfessor = document.getElementById("fecharmodal-professor");
 
         // ABRIR
@@ -303,15 +299,9 @@
 
         // LOGIN PROFESSOR
         const formProfessor = document.getElementById("form-login-professor");
-
-
         formProfessor.addEventListener("submit", function (event) {
             event.preventDefault();
-
-           
              window.location.href = "professor/professor.html";
-
-            
         });
     </script>
 </body>

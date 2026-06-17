@@ -365,12 +365,13 @@
             document.getElementById('modal').style.display = 'none';
         }
 
-        const botao_boxe = document.querySelector("#butonboxe");
-        const boxe_modal = document.querySelector("#conteudoboxe-modal");
+        const botao_boxe = document.querySelector("#butonboxe"); // botao
+        const boxe_modal = document.querySelector("#conteudoboxe-modal"); // conteúdo a ser mostrado
 
-        if (botao_boxe) {
-            botao_boxe.addEventListener('click', () => {
-                boxe_modal.classList.toggle("esconder");
+        if (botao_boxe) { // verifica se o botao existe
+            botao_boxe.addEventListener('click', () => { // se o botao existe ele é aberto
+                boxe_modal.classList.toggle("esconder"); // como a classe já existe inicialmente, quando eu clico no card
+                // o toggle faz ela esconder (ela vira flex)
             });
         }
 

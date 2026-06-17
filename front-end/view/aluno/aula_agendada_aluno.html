@@ -191,16 +191,17 @@
 
 
         // SISTEMA DE FILTRO E BARRA DE PESQUISA (Combina Busca + Tipo)
-
+        // pegar os dados do html
         const inputPesquisa = document.getElementById("pesquisa-aluno");
         const selectFiltro = document.getElementById("filtro-modalidade");
-
+        // inicar a funcao 
         function aplicarBuscaEFiltro() {
+            // vai pegar o valor digitado, o tolowercase serve para ignorar letras maiúsculas e minusculas
             const texto = inputPesquisa.value.toLowerCase();
             const filtro = selectFiltro.value.toLowerCase();
 
             const cards = document.querySelectorAll(".card-conteudo");
-
+            // percorrer por tdos os cards 
             cards.forEach(card => {
                 const modalidade = card
                     .querySelector(".titulo-modalidade")
@@ -215,8 +216,8 @@
             });
         }
 
-        inputPesquisa.addEventListener("input", aplicarBuscaEFiltro);
-        selectFiltro.addEventListener("change", aplicarBuscaEFiltro);
+        inputPesquisa.addEventListener("input", aplicarBuscaEFiltro); // a função é chamada a cada letras
+        selectFiltro.addEventListener("change", aplicarBuscaEFiltro); // quando o usuario troca de opção do select
     </script>
 </body>
 
