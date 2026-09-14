@@ -401,143 +401,38 @@ main{
     flex-direction: column;
 }
 
-.form-pagina{
-    width: 60%;
-    height: auto;
-    box-shadow: 1px 2px 6px #858585;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.foto-formulario{
-    width: 30%;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    margin-left: 10%;
-}
-
-.foto{
+.foto-placeholder {
     width: 160px;
     height: 160px;
     background-color: #c9c9c9;
-    border-radius: 50%;
     border: 2px solid #1D1D1D;
 }
 
-#button-foto{
-    margin: 10px;
-    margin-left: 10%;
-    font-size: 13px;
-    border: none;
-    background-color: #6C6C6C;
-    border-radius: 5px;
-    width: 120px;
-    height: 20px;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+.hr-pagina {
+    border-top: 2px solid #3B8962;
+    opacity: 1;
+    /* O Bootstrap reduz a opacidade do hr, isso restaura a cor sólida */
 }
 
-#button-foto:hover{
-    transform: scale(1.03);
-}
-
-
-#hr-pagina{
-    width: 90%;
-    margin-top: 5%;
-    height: 1px;
+.btn-salvar {
     background-color: #3B8962;
-}
-
-.card-formulario{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 3%;
-}
-
-
-.card{
-    width: 70%;
-    border: none;
-    width: 40%;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-}
-
-
-input, select{
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 5px;
-    height: 30px;
-    width: 90%;
-    font-size: 16px;
-}
-
-
-label{
-    margin-bottom: 5px;
-    padding: 5px;
-    font-size: 18px;
-}
-
-#hr-button{
-    margin-top: 4%;
-}
-
-.buton{
-    width: 90%;
-    height: 50px;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-}
-
-.buton button{
-    border: none;
     color: #fff;
-    height: 35px;
-    font-size: 16px;
-    transition: 0.3s ease-in-out;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
 }
 
-.buton button:hover{
-    box-shadow: 1px 2px 5px #1D1D1D;
+.btn-salvar:hover {
+    background-color: #2f6d4e;
+    color: #fff;
 }
 
-.buton button i{
-    margin: 5px;
-    font-size: 16px;
-}
-
-#cancelar{
+.btn-cancelar {
     background-color: #9c0000;
-    width: 110px;
+    color: #fff;
 }
 
-#salvar{
-    background-color: #3B8962;
-    width: 100px;
+.btn-cancelar:hover {
+    background-color: #750000;
+    color: #fff;
 }
-
-
 /* FOOTER */
 
 footer{

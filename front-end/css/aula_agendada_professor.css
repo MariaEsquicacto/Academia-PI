@@ -413,80 +413,24 @@ hr{
     width: 80px;
 }
 
-article{
-    width: 35%;
-    border: 2px solid #1D1D1D;
-    border-radius: 5px;
-    height: 530px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5%;
+.btn-salvar {
+    background-color: #3B8962;
+    color: #fff;
 }
 
-article h2{
-    text-align: center;
-    font-size: 25px;
-    margin: 20px;
+.btn-salvar:hover {
+    background-color: #2f6d4e;
+    color: #fff;
 }
 
-#form-aula{
-    width: 80%;
-    height: 90%;
-    margin-top: 2%;
-}
-
-.card-form-aula{
-    display: flex;
-    flex-direction: column;
-}
-
-.card-form-aula label{
-    font-size: 18px;
-    margin-bottom: 2px;
-}
-
-.card-form-aula input, .card-form-aula select{
-    border-radius: 4px;
-    height: 25px;
-    padding: 4px;
-    font-size: 15px;
-}
-
-.card-form-aula select{
-    height: 28px;
-}
-
-.horario{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.buton-form{
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    margin-top: 6%;
-}
-
-#cancelar-form{
+.btn-cancelar {
     background-color: #A51313;
-    width: 110px;
-    cursor: pointer;
-    height: 30px;
-    font-size: 18px;
+    color: #fff;
 }
 
-#salvar-form{
-    background: #3B8962;
-    width: 90px;
-    font-size: 18px;
-    cursor: pointer;
-    height: 30px;
+.btn-cancelar:hover {
+    background-color: #7a0d0d;
+    color: #fff;
 }
 
 .titulo-modalidade::marker{
