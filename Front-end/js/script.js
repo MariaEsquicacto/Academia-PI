@@ -1108,7 +1108,7 @@ $document.ready( function () {
     },
     5: {
       nome: "Juliano Castro",
-      especialidade: "Professora de Judô",
+      especialidade: "Professor de Judô",
       descricao: "Praticante desde a infância, Juliano ensina as bases filosóficas e as quedas do judô com total segurança para todas as idades, focando em equilíbrio e respeito.",
       foto: "images/professor-judo.jpg"
     },
@@ -1139,4 +1139,181 @@ $document.ready( function () {
   function fecharCard() {
     document.getElementById('info-professor-card').style.display = 'none';
   }
+
+//   MODALIDADES
+// IR PARA A PAGINA MODALIDADES DE ACORDO COM A MODALIDADE ESCOLHIDA NA PAGINA HOME
+        //INSERIR OS TEXTOS VIA INNERTEXT
+        const parametros = new URLSearchParams(window.location.search);
+
+        const luta = parametros.get("luta");
+
+        const titulo = document.getElementById("titulo-luta");
+        const texto1 = document.getElementById("texto1");
+        const texto2 = document.getElementById("texto2");
+        const texto3 = document.getElementById("texto3");
+        const beneficios = document.getElementById("beneficios");
+        const funcionamento = document.getElementById("funcionamento");
+        const estilo = document.getElementById("estilo");
+
+        if (titulo) {
+
+            if (luta === "boxe") {
+
+                titulo.innerText = "Boxe";
+
+                texto1.innerText = "O boxe é uma modalidade de combate que envolve apenas o uso dos punhos, realizada com luvas em um ringue. O objetivo é nocautear o oponente ou acumular pontos durante os rounds. Originado há milhares de anos, teve seu renascimento na Inglaterra, através de competições amadoras que evoluíram para o profissionalismo. As regras do boxe incluem o uso exclusivo dos punhos, limites de áreas de impacto e a obrigatoriedade de luvas.";
+                texto2.innerText = "As s lutas são decididas por pontos, nocautes, quedas, nocautes técnicos ou desistências. Existem diferentes tipos de boxe, como o olímpico e o profissional, cada um com suas especificidades.";
+                texto3.innerText = "Os golpes incluem jab, direto, cruzado e gancho. Infrações como golpes nos braços e agarrar são penalizadas ou não pontuadas. A classificação dos boxeadores é feita por peso, e o esporte, no Brasil, tem uma história marcante, com nomes como Éder Jofre, Popó e conquistas recentes em competições internacionais.";
+
+                beneficios.innerHTML = `
+            <li>Melhora o condicionamento</li>
+            <li>Aumenta a resistência</li>
+            <li>Ajuda na coordenação</li>
+            <li>Reduz o estresse</li>
+        `;
+
+                funcionamento.innerHTML = `
+            <li>Aquecimento</li>
+            <li>Treino técnico</li>
+            <li>Saco de pancada</li>
+            <li>Movimentação</li>
+            <li>Alongamento</li>
+        `;
+
+                estilo.innerText = "No boxe, os lutadores geralmente se dividem em quatro grandes estilos estratégicos: o Enxameador (agressivo, que luta na curta distância), o Boxeador de Longo Alcance (usa a distância e a velocidade do jab), o Lutador ou Boxeador-Socador (combina força com pressão), e o Contra-Atacante (espera o erro para golpear).";
+            }
+
+            else if (luta === "jj") {
+
+                titulo.innerText = "Jiu Jitsu";
+
+                texto1.innerText = "O jiu-jítsu é um esporte de combate e uma arte marcial que foi desenvolvida no Japão. Trata-se de uma luta em que o atleta tenta controlar o adversário com golpes, até conseguir imobilizá-lo, usando técnicas de torção ou estrangulamento, que finalizam o combate.";
+                texto2.innerText = "Esta é uma arte marcial difícil, porque exige movimentos complexos, rápidos e não são permitidos socos e chutes.";
+                texto3.innerText = "Os praticantes veem no jiu-jítsu não apenas um esporte ou uma forma de defesa pessoal, mas uma filosofia de vida. Isso ocorre porque, além de treinar o corpo, os atletas do jiu-jítsu também treinam a mente, já que a sua prática se baseia em princípios. Um dos seus princípios mais importantes é a humildade. O nome jiu-jítsu significa “arte suave”, porque é formado pelas palavras ju, que significa suavidade, e jutsu, que significa arte.";
+
+                beneficios.innerHTML = `
+            <li>Promove a queima de calorias</li>
+            <li>Desenvolvimento da força e da flexibilidade</li>
+            <li>Técnicas reais de autodefesa</li>
+            <li>Mentalmente, a luta é excelente para aliviar o estresse e aumentar a autoconfiança</li>
+        `;
+
+                funcionamento.innerHTML = `
+            <li>Dinâmica do combate</li>
+            <li>Treino de quedas</li>
+            <li>Técnicas de solo</li>
+            <li>Raspagens</li>
+            <li>Rolamento</li>
+        `;
+
+                estilo.innerText = "A dinâmica do Jiu-Jitsu baseia-se em alavancas, peso corporal e estratégia, permitindo que uma pessoa menor e mais fraca domine um adversário maior. A luta divide-se em fases específicas";
+            }
+
+            else if (luta === "mt") {
+
+                titulo.innerText = "Muay Thai";
+
+                texto1.innerText = "O Muay Thai é uma luta marcial tailandesa, conhecida como a “luta das 8 armas”. Essas armas são as partes do corpo utilizadas nos golpes: dois cotovelos, dois punhos, dois joelhos e a combinação das duas canelas e dos dois pés.";
+                texto2.innerText = "Também chamado de thai boxe ou boxe tailandês, o Muay Thai utiliza socos, cotoveladas, joelhadas, chutes e técnicas de esquiva e proteção.";
+                texto3.innerText = "O Muay Thai surge como uma técnica de defesa e de guerra, desenvolvida pelos tailandeses para sua proteção e para a defesa do seu território contra os inimigos.";
+
+                beneficios.innerHTML = `
+            <li>Tonificação muscular</li>
+            <li>Condicionamento Cardiovascular</li>
+            <li>Flexibilidade e Coordenação</li>
+            <li>Mentalmente, a luta é excelente para aliviar o estresse e aumentar a autoconfiança</li>
+        `;
+
+                funcionamento.innerHTML = `
+            <li>Socos: Incluem o Jab (soco com a mão da frente), Direto (soco com a mão de trás), Cruzado e Uppercut.</li>
+            <li>Chutes: O mais famoso é o chute circular (com a canela), além dos chutes frontais e laterais.</li>
+            <li>Joelhadas: Podem ser aplicadas na linha de cintura ou na cabeça do oponente, muito comuns no "clinch".</li>
+            <li>Cotoveladas: Golpes curtos e cortantes, utilizados em curtas distâncias ou no "clinch".</li>
+            
+        `;
+
+                estilo.innerText = "O Muay Thai é uma arte marcial tailandesa conhecida como a arte das oito armas. O estilo baseia-se no uso estratégico e combinado de socos, chutes, joelhadas e cotoveladas, além de um intenso jogo de clinch (agarre) e controle de distância. Dependendo da estratégia e das características físicas do praticante, a luta pode se adaptar a diferentes estilos. ";
+            }
+
+            else if (luta === "mma") {
+
+                titulo.innerText = "MMA";
+
+                texto1.innerText = "MMA é a sigla em inglês para Mixed Martial Arts, que em português significa Artes Marciais Mistas. Trata-se de uma modalidade de luta em que os atletas podem utilizar técnicas de diferentes estilos de combate, tanto em pé quanto no chão. Assim, golpes de artes como boxe, judô, muay thai, entre outras, são permitidos sob um conjunto único de regras.";
+                texto2.innerText = "O principal objetivo do MMA é permitir que os lutadores escolham livremente quais técnicas usar para vencer o oponente. Para vencer a luta, o atleta que deve nocautear o adversário, ser declarado vencedor por decisão dos juízes ou aplicar uma finalização que leve o oponente à desistência.";
+                texto3.innerText = "As lutas acontecem em uma arena cercada por grades (chamada de octógono) no UFC, ou em um ringue tradicional com cordas, onde dois atletas se enfrentam.";
+
+                beneficios.innerHTML = `
+            <li>Tonificação muscular</li>
+            <li>Condicionamento Cardiovascular</li>
+            <li>Autodefesa</li>
+            <li>Mentalmente, a luta é excelente para aliviar o estresse e aumentar a autoconfiança</li>
+        `;
+
+                funcionamento.innerHTML = `
+            <li>Cada luta é dividida em 3 rounds, com 1 minuto de descanso entre eles.</li>
+            <li>As lutas pelo título ou principais eventos podem ter até 5 rounds.</li>
+            <li>A pontuação é feita por três juízes, que avaliam cada round separadamente usando o sistema de pontuação, caso não haja imobilização ou nocaute</li>
+            <li>Os equipamentos usados pelos atletas são essenciais para garantir segurança e desempenho durante as lutas. Os principais equipamento são: luvas, protetor bucal e coquilha.</li>
+            
+        `;
+
+                estilo.innerText = "O estilo do MMA (Artes Marciais Mistas) é híbrido e dinâmico. Os lutadores combinam técnicas de várias artes marciais para dominar o combate em três áreas principais: a luta em pé (striking), as quedas e a luta agarrada no chão (grappling). ";
+            }
+
+            else if (luta === "judo") {
+
+                titulo.innerText = "Judô";
+
+                texto1.innerText = "O judô é uma arte marcial japonesa aplicada no treinamento físico, intelectual, na educação moral e interação social do praticante. Jigoro Kano foi responsável por desenvolver a luta em 1882 no Japão.";
+                texto2.innerText = "Criado a partir da influência do jiu-jitsu, o judô teve sua expansão para o mundo após a Segunda Guerra Mundial. O objetivo em uma luta de judô é derrubar o adversário, mantendo suas costas e ombros no tatame, por meio da imobilização.";
+                texto3.innerText = "A imigração japonesa impulsionou a prática do judô no Brasil. O país configura entre as nações com o maior número de títulos na modalidade.";
+
+                beneficios.innerHTML = `
+            <li>Segurança em Quedas</li>
+            <li>Condicionamento Cardiovascular</li>
+            <li>Coordenação e Equilíbrio</li>
+            <li>Mentalmente, a luta é excelente para aliviar o estresse e aumentar a autoconfiança</li>
+        `;
+
+                funcionamento.innerHTML = `
+            <li>A roupa utilizada no judô se chama judogui, tradicionalmente na cor branca. </li>
+            <li>Koshi-waza: técnicas de quadril.</li>
+            <li>Te-waza: técnicas de braço.</li>
+            <li>Ashi-waza: técnicas de perna.</li>
+            
+        `;
+
+                estilo.innerText = "Diferente de artes marciais focadas em golpes traumáticos (como socos e chutes), o judô foi desenvolvido com base em princípios éticos e científicos. Os pilares centrais são: Seiryoku-Zenyo: Máximo de eficiência com o mínimo de esforço. Jita-Kyoei: Prosperidade e benefício mútuo. ";
+            }
+
+            else if (luta === "km") {
+
+                titulo.innerText = "Krav Maga";
+
+                texto1.innerText = "O krav maga é mais que uma arte marcial: é uma técnica de defesa pessoal criada para situações reais. Nascido em Israel, combina eficiência, rapidez e movimentos simples para neutralizar ameaças com segurança. Por isso, atrai quem busca preparo físico e confiança no dia a dia. Além de melhorar a resistência e o condicionamento, essa modalidade fortalece a mente e desenvolve autoconfiança. Seja para praticar como exercício, aumentar a sensação de segurança ou conhecer uma luta estratégica, essa é uma modalidade acessível para homens e mulheres em diferentes fases da vida. ";
+                texto2.innerText = "O krav maga é um sistema de defesa pessoal desenvolvido para enfrentar situações reais de ameaça. Diferente de esportes de combate, ele não foca em regras ou competições. O objetivo principal é garantir a segurança do praticante com técnicas simples, rápidas e eficientes.";
+                texto3.innerText = "Essa prática serve para preparar o corpo e a mente em cenários de risco, como assaltos, agressões físicas ou confrontos inesperados. É amplamente utilizada tanto no meio civil quanto por forças policiais e militares. O aprendizado envolve reflexos, controle emocional e estratégias de reação imediata.";
+
+                beneficios.innerHTML = `
+            <li>Condicionamento físico completo: fortalece a musculatura, melhora a resistência e aumenta a agilidade.</li>
+            <li>Autoconfiança elevada: proporciona segurança em situações de risco e maior tranquilidade no dia a dia.</li>
+            <li>Redução do estresse: os treinos intensos ajudam a liberar tensões e equilibrar as emoções.</li>
+            <li>Melhora da concentração: exige foco total, estimulando disciplina mental e clareza nas decisões.</li>
+        `;
+
+                funcionamento.innerHTML = `
+            <li>Ataque e defesa simultâneos: Defender um golpe e contra-atacar ao mesmo tempo, evitando que o agressor continue a ofensiva.</li>
+            <li>Menor caminho e máxima velocidade: Utilizar movimentos curtos, naturais e diretos.</li>
+            <li>Uso dos pontos vulneráveis: Focar os golpes onde o oponente não tem resistência muscular (olhos, traqueia, genitais, joelhos).</li>
+            <li>Nunca dar as costas: Em situações com múltiplos agressores, o praticante deve manter o campo de visão amplo.</li>
+            
+        `;
+
+                estilo.innerText = "O krav maga é mais que um sistema de combate. Ele une preparo físico, mentalidade estratégica e técnicas simples que podem ser decisivas em situações reais. Por isso, vai além da autodefesa – oferece confiança, condicionamento e equilíbrio para a vida cotidiana. Se você busca evolução pessoal e quer unir performance, bem-estar e confiança, explorar o universo do krav maga é uma escolha estratégica. E na Netshoes, você encontra tudo para apoiar sua jornada esportiva com praticidade e qualidade. ";
+            }
+
+        }
+
+
 

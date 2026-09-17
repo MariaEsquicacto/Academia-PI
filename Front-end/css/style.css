@@ -31025,3 +31025,84 @@ footer a.efeito:hover {
     box-shadow: 0 8px 20px rgba(59, 137, 98, 0.3) !important;
 }
 
+/* MODALIDADES */
+#imagem-fundo{
+	height: 280px; 
+	object-fit: cover;
+}
+
+/* MATRICULE-SE */
+
+
+.foto-placeholder {
+    width: 160px;
+    height: 160px;
+    background-color: #c9c9c9;
+    border: 2px solid #1D1D1D;
+}
+
+.hr-pagina {
+    border-top: 2px solid #3B8962;
+    opacity: 1;
+}
+
+.btn-salvar {
+    background-color: #3B8962;
+    color: #fff;
+}
+
+.btn-salvar:hover {
+    background-color: #2f6d4e;
+    color: #fff;
+}
+
+.btn-cancelar {
+    background-color: #9c0000;
+    color: #fff;
+}
+
+.btn-cancelar:hover {
+    background-color: #750000;
+    color: #fff;
+}
+
+form .form-group, 
+    form div[class*="col-"] {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    form label.form-label, 
+    form label {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        margin-bottom: 5px !important;
+        color: #333 !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    form .form-control {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        height: 40px !important;
+        padding: 6px 12px !important;
+        background-color: #fff !important;
+        border: 1px solid #ccc !important;
+        border-radius: 4px !important;
+        box-shadow: none !important;
+    }
+
+    form textarea.form-control {
+        height: auto !important;
+    }
+
+
