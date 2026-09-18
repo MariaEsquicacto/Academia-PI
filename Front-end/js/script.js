@@ -1316,4 +1316,139 @@ $document.ready( function () {
         }
 
 
+//FUNÇÃO DO CALENDÁRIO
+const diasContainer = document.getElementById("dias");
+const mesAno = document.getElementById("mes-ano");
+const btnAnterior = document.getElementById("anterior");
+const btnProximo = document.getElementById("proximo");
+
+
+const meses = [
+	"Janeiro",
+	"Fevereiro",
+	"Março",
+	"Abril",
+	"Maio",
+	"Junho",
+	"Julho",
+	"Agosto",
+	"Setembro",
+	"Outubro",
+	"Novembro",
+	"Dezembro"
+];
+
+
+let dataAtual = new Date();
+
+
+// FUNÇÃO PRINCIPAL
+function renderizarCalendario() {
+
+	const aulas = JSON.parse(localStorage.getItem("aulas")) || [];
+	diasContainer.innerHTML = "";
+	const ano = dataAtual.getFullYear();
+	const mes = dataAtual.getMonth();
+	mesAno.innerHTML = `${meses[mes]} ${ano}`;
+	const primeiroDia = new Date(ano, mes, 1).getDay();
+	const ultimoDia = new Date(ano, mes + 1, 0).getDate();
+	const hoje = new Date();
+
+
+	// ESPAÇOS VAZIOS
+	for (let i = 0; i < primeiroDia; i++) {
+		const vazio = document.createElement("div");
+		vazio.classList.add("dia", "vazio");
+		diasContainer.appendChild(vazio);
+	}
+
+
+	// DIAS DO MÊS
+	for (let dia = 1; dia <= ultimoDia; dia++) {
+		const divDia = document.createElement("div");
+		divDia.classList.add("dia");
+
+
+		// DOMINGO
+		const diaSemana = new Date(ano, mes, dia).getDay();
+		if (diaSemana === 0) {
+			divDia.classList.add("domingo");
+
+		}
+
+
+		// DIA ATUAL
+		if (
+			dia === hoje.getDate() &&
+			mes === hoje.getMonth() &&
+			ano === hoje.getFullYear()
+		) {
+
+			divDia.classList.add("hoje");
+
+		}
+
+
+		divDia.innerHTML = `
+	<div class="numero">${dia}</div>
+`;
+
+		// EVENTOS FIXOS DO CALENDÁRIO
+
+		// 24/06/2026 - Boxe
+		if (ano === 2026 && mes === 5 && dia === 24) {
+
+			const evento = document.createElement("div");
+			evento.classList.add("evento");
+			evento.textContent = "Boxe";
+			evento.style.cursor = "pointer";
+			evento.style.height = "30px";
+			evento.style.background = "#3B8962";
+			evento.style.display = "flex";
+			evento.style.justifyContent = "center";
+			evento.style.alignItems = "center";
+			evento.style.color = "#fff";
+			evento.style.borderRadius = "10px";
+			evento.style.fontSize = "19px";
+
+			evento.addEventListener("click", (e) => {
+				e.stopPropagation();
+				modalAula.classList.add("active");
+			});
+
+			divDia.appendChild(evento);
+		}
+
+		// 25/06/2026 - Jiu Jitsu
+		if (ano === 2026 && mes === 5 && dia === 25) {
+
+			const evento = document.createElement("div");
+			evento.classList.add("evento");
+			evento.textContent = "Jiu Jitsu";
+			evento.style.cursor = "pointer";
+			evento.style.height = "30px";
+			evento.style.background = "#042550";
+			evento.style.display = "flex";
+			evento.style.justifyContent = "center";
+			evento.style.alignItems = "center";
+			evento.style.color = "#fff";
+			evento.style.borderRadius = "10px";
+			evento.style.fontSize = "19px";
+
+			evento.addEventListener("click", (e) => {
+				e.stopPropagation();
+				document.getElementById("modal-jiujitsu").classList.add("active");
+
+			});
+
+			divDia.appendChild(evento);
+		}
+
+
+		// DATA COMPLETA
+		const dataCompleta = `${ano}-${String(mes + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+
+	}}
+
+
 

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="wow-animation" lang="pt-br">
+  <head>
+    <title>Calendário</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="date" content="Dec 26">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,700,700italic">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <!-- Page-->
+    <div class="page text-center">
+      
+       <!-- HEADER-->
+       <header class="page-head slider-menu-position" data-preset='{"title":"Header with breadcrumbs","category":"header, breadcrumbs","reload":true,"id":"header-2"}'>
+        <!-- RD Navbar Transparent-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar container rd-navbar-floated rd-navbar-dark" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
+            <div class="rd-navbar-inner">
+              
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
+                
+                <!--Navbar Brand-->
+                <div class="rd-navbar-brand"><a href="professor.html"><img width='80' height='80' src='../images/logo-equipe.png' alt=''/></a></div>
+              </div>
+              <div class="rd-navbar-menu-wrap">
+                <div class="rd-navbar-nav-wrap">
+                  <div class="rd-navbar-mobile-scroll">
+                    <!--Navbar Brand Mobile-->
+                    <div class="rd-navbar-mobile-brand"><a href="professor.html"><img width='80' height='80' src='../images/logo-equipe.png' alt=''/></a></div>
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li><a href="professor.html"><span>Home</span></a></li>
+                      <li class="active"><a href="calendario_professor.html"><span>Calendário</span></a></li>
+                      <li><a href="aulas_agendadas_professor.html"><span>Aulas Agendadas</span></a></li>
+                      <li><a href="aulas_experimentais_professor.html"><span>Aulas Experimentais</span></a></li>
+                      <li><a href="grenciamento_alunos.html"><span>Gerenciamento de Alunos</span></a></li>
+                      <li><a href="gerenciamento_professores.html"><span>Gerenciamento de Professores</span></a></li>
+                      <li><a href="../index.html"><span>Sair</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="context-dark">
+          <!-- Modern Breadcrumbs-->
+          <section>
+            <div class="parallax-container breadcrumb-modern bg-gray-darkest" data-parallax-img="../images/imagem-fundo.png">
+              <div class="parallax-content"> 
+                <div class="container section-top-98 section-bottom-34 section-lg-bottom-66 section-lg-98 section-xl-top-110 section-xl-bottom-41">
+                  <h2 class="d-none d-lg-block offset-top-30" id="titulo-luta"><span class="big">Calendário</span></h2>
+                  <ul class="list-inline list-inline-dashed">
+                    <li class="list-inline-item"><a href="professor.html">Home</a></li>
+                    <li class="list-inline-item">Calendário
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <!-- MAIN  -->
+
+     <!-- MAIN - Calendário e Aulas -->
+<main class="py-5 bg-gray-lightest">
+    <div class="container">
+        
+        <!-- Botões de Ação -->
+        <div class="d-flex flex-wrap justify-content-end gap-3 mb-4">
+            <a href="aula_agendada_professor.html" class="btn btn-nova-aula px-4 shadow-sm">
+                <i class="bi bi-plus-lg me-1"></i> Nova Aula
+            </a>
+            <a href="aula_experimental_professor.html" class="btn btn-nova-aula-exp px-4 shadow-sm">
+                <i class="bi bi-plus-lg me-1"></i> Nova Aula Experimental
+            </a>
+        </div>
+
+        <!-- Card do Calendário -->
+        <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
+            
+            <!-- Topo do Calendário (Mês/Ano e Navegação) - IDs Mantidos -->
+            <div class="card-header topo-calendario d-flex justify-content-between align-items-center py-3 border-0">
+                <button id="anterior" class="btn btn-nav-cal"><i class="bi bi-chevron-left"></i></button>
+                <h3 id="mes-ano" class="m-0 text-white fw-bold fs-4"></h3>
+                <button id="proximo" class="btn btn-nav-cal"><i class="bi bi-chevron-right"></i></button>
+            </div>
+
+            <div class="card-body p-0">
+                <!-- Dias da Semana -->
+                <div class="d-flex text-center bg-light py-3 border-bottom dias-semana-header">
+                    <div class="text-danger fw-bold">Dom</div>
+                    <div class="text-secondary fw-bold">Seg</div>
+                    <div class="text-secondary fw-bold">Ter</div>
+                    <div class="text-secondary fw-bold">Qua</div>
+                    <div class="text-secondary fw-bold">Qui</div>
+                    <div class="text-secondary fw-bold">Sex</div>
+                    <div class="text-secondary fw-bold">Sáb</div>
+                </div>
+
+                <!-- Grid de Dias - ID 'dias' mantido para o JS injetar as datas aqui -->
+                <div class="dias-grid p-3" id="dias">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- MODAL BOXE (Com ID mantido para o JS) -->
+<div class="modal" id="modal-aula" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            
+            <div class="modal-header border-bottom-0 pb-0">
+                <h4 class="modal-title fw-bold" style="color: #1D1D1D;">Boxe</h4>
+                <!-- ID fecharmodal-aula mantido -->
+                <button type="button" class="btn-close" id="fecharmodal-aula"></button>
+            </div>
+            
+            <div class="modal-body pt-2">
+                <hr class="mb-4 text-muted">
+                <ul class="list-unstyled d-flex flex-column gap-3 mb-0 px-2">
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-clock fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Horário:</strong> 10:00 - 11:00</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-calendar4 fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Data:</strong> 24-06-2026</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-tags fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Tipo:</strong> Experimental</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-person fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Professor:</strong> Carlos</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-people fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Alunos:</strong> 10</span>
+                    </li>
+                </ul>
+                <hr class="mt-4 text-muted">
+            </div>
+            
+            <div class="modal-footer border-top-0 pt-0 d-flex justify-content-between">
+                <button type="button" id="cancelar-modal" class="btn btn-cancelar-modal px-4">
+                    <i class="bi bi-trash"></i> Cancelar
+                </button>
+                <button type="button" id="editar-aula" class="btn btn-editar-modal px-4">
+                    <i class="bi bi-pencil"></i> Editar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL JIU JITSU (Com ID mantido para o JS) -->
+<div class="modal" id="modal-jiujitsu" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            
+            <div class="modal-header border-bottom-0 pb-0">
+                <h4 class="modal-title fw-bold" style="color: #1D1D1D;">Jiu Jitsu</h4>
+                <!-- ID fechar-modal-jiujitsu mantido -->
+                <button type="button" class="btn-close" id="fechar-modal-jiujitsu"></button>
+            </div>
+            
+            <div class="modal-body pt-2">
+                <hr class="mb-4 text-muted">
+                <ul class="list-unstyled d-flex flex-column gap-3 mb-0 px-2">
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-clock fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Horário:</strong> 10:00 - 11:00</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-calendar4 fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Data:</strong> 25-06-2026</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-tags fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Tipo:</strong> Agendada</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-person fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Professor:</strong> Carlos</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <i class="bi bi-people fs-5 icon-verde"></i>
+                        <span class="fs-6"><strong>Alunos:</strong> 10</span>
+                    </li>
+                </ul>
+                <hr class="mt-4 text-muted">
+            </div>
+            
+            <div class="modal-footer border-top-0 pt-0 d-flex justify-content-between">
+                <button type="button" class="btn btn-cancelar-modal px-4">
+                    <i class="bi bi-trash"></i> Cancelar
+                </button>
+                <button type="button" class="btn btn-editar-modal px-4">
+                    <i class="bi bi-pencil"></i> Editar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      
+      <!-- FOOTER -->
+      <footer class="section-relative section-top-66 section-bottom-34 page-footer bg-gray-base context-dark novi-background" data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}' style="margin-top: 120px;">
+        <div class="container">
+          <div class="row justify-content-md-center text-xl-left">
+            <div class="col-md-12">
+              <div class="row justify-content-sm-center justify-content-xl-between">
+                
+                <div class="col-sm-10 col-md-3 col-xl-3 text-left">
+                  <div class="footer-brand"><a href="index.html"><img width='80' height='80' src='../images/logo-equipe.png' alt='Logo da Equipe'/></a></div>
+                  <div class="offset-top-50 text-sm-center text-xl-left">
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a class="novi-icon icon fa fa-facebook icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
+                      <li class="list-inline-item"><a class="novi-icon icon fa fa-twitter icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
+                      <li class="list-inline-item"><a class="novi-icon icon fa fa-google-plus icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
+                      <li class="list-inline-item"><a class="novi-icon icon fa fa-linkedin icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
+                    </ul>
+                  </div>
+                  <p class="text-darker offset-top-20">Iron Fight &copy; <span id="copyright-year"></span> 
+                  
+                  </p>
+                </div>
+
+                <div class="col-sm-10 col-md-3 col-xl-2 text-left offset-top-50 offset-xl-top-0">
+                  <p class="text-uppercase text-spacing-60 font-weight-bold" style="color: #3B8962;">Redes Sociais</p>
+                  <div class="offset-top-20">
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                      <li><a href="#" class="efeito text-white">Instagram</a></li>
+                      <li><a href="#" class="efeito text-white">Tik Tok</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-10 col-md-3 col-xl-2 text-left offset-top-50 offset-xl-top-0">
+                  <p class="text-uppercase text-spacing-60 font-weight-bold" style="color: #3B8962;">Contato</p>
+                  <div class="offset-top-20">
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                      <li class="text-white">ironfight@outlook.com</li>
+                      <li class="text-white">(18) 99999-9999</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-10 col-md-3 col-xl-3 text-left offset-top-50 offset-xl-top-0">
+                  <p class="text-uppercase text-spacing-60 font-weight-bold" style="color: #3B8962;">Navegue</p>
+                  <div class="offset-top-20">
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                      <li><a href="index.html" class="efeito text-white">Home</a></li>
+                      <li><a href="sobrenos.html" class="efeito text-white">Sobre Nós</a></li>
+                      <li><a href="modalidades.html" class="efeito text-white">Modalidades</a></li>
+                      <li><a href="matriculese.html" class="efeito text-white">Matricule-se</a></li>
+                      <li><a href="contacts.html" class="efeito text-white">Área do Aluno</a></li>
+                      <li><a href="contacts.html" class="efeito text-white">Área do Professor</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Java script-->
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

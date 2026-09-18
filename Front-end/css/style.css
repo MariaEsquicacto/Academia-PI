@@ -31105,4 +31105,434 @@ form .form-group,
         height: auto !important;
     }
 
+	/* HOME PROFESSOR */
+/* Aplica a regra apenas para telas grandes (desktop) */
+@media (min-width: 992px) {
+    
+    /* 1. Força a barra inteira a ser uma única linha horizontal */
+    .rd-navbar-inner {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+    }
 
+    /* 2. Impede a logo de ocupar a largura inteira da tela */
+    .rd-navbar-panel {
+      width: auto !important;
+      margin: 0 !important;
+    }
+
+    /* 3. Impede a caixa do menu de cair para a linha de baixo */
+    .rd-navbar-menu-wrap {
+      width: auto !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    /* 4. Mantém os itens do menu em linha com espaçamento reduzido */
+    .rd-navbar-nav {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .rd-navbar-nav > li {
+      white-space: nowrap !important; 
+      margin-left: 8px !important; 
+      margin-right: 8px !important;
+    }
+
+    .rd-navbar-nav > li > a {
+      padding-left: 5px !important;
+      padding-right: 5px !important;
+      font-size: 14px !important; 
+    }
+  }
+  .card-painel {
+	display: block;
+	height: 100%;
+	outline: none;
+}
+
+/* Estilo principal do Card com o deslocamento verde (box-shadow sólido) */
+.card-painel .card-body {
+	border: 2px solid #3B8962;
+	/* Cria a sombra sólida deslocada para a esquerda e para baixo */
+	box-shadow: -10px 10px 0px #3B8962; 
+	min-height: 200px;
+	transition: all 0.2s ease-in-out;
+}
+
+/* Ícone verde */
+.icon-painel {
+	font-size: 50px;
+	color: #3B8962;
+	margin-bottom: 15px;
+}
+
+/* Texto preto e em negrito */
+.card-painel h5 {
+	font-size: 18px;
+	font-weight: 700;
+	color: #000;
+	line-height: 1.4;
+}
+
+/* Efeito de Hover (O card "afunda" em direção à sombra para dar sensação de clique) */
+.card-painel:hover .card-body {
+	transform: translate(-4px, 4px);
+	box-shadow: -6px 6px 0px #3B8962; 
+}
+
+/* CALENDARIO */
+/* CONEXÃO COM O JAVASCRIPT PARA OS MODAIS */
+/* Quando o seu JS adicionar a classe .active, o modal do Bootstrap aparece */
+.modal.active {
+    display: block !important;
+    opacity: 1 !important;
+    background-color: rgba(0, 0, 0, 0.6); /* Escurece o fundo */
+}
+
+/* ESTILOS DO CALENDÁRIO */
+.topo-calendario {
+    background-color: #1D1D1D; 
+}
+
+.btn-nav-cal {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+
+.btn-nav-cal:hover {
+    background: #3B8962;
+    color: #fff;
+    border-color: #3B8962;
+}
+
+.dias-semana-header > div {
+    width: 14.28%;
+}
+
+/* O grid onde o JavaScript vai jogar os dias */
+.dias-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    background-color: #f8f9fa;
+}
+
+/* DESIGN DOS DIAS GERADOS PELO JAVASCRIPT (.dia, .vazio, .hoje) */
+.dia {
+    min-height: 100px; /* Deixa os dias quadrados/altos */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.dia:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.dia.vazio {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.dia.hoje {
+    border: 2px solid #3B8962;
+    background-color: #f0fdf4; /* Fundo verde clarinho para destacar o dia atual */
+}
+
+/* Número do dia gerado pelo seu script */
+.numero {
+    font-weight: bold;
+    font-size: 16px;
+    color: #495057;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.dia.domingo .numero {
+    color: #dc3545; /* Deixa o número vermelho no domingo */
+}
+
+/* BOTÕES DE NOVA AULA */
+.btn-nova-aula {
+    background-color: #1D1D1D;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+}
+.btn-nova-aula:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-nova-aula-exp {
+    background-color: #3B8962;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 6px;
+}
+.btn-nova-aula-exp:hover {
+    background-color: #2f6d4e;
+    color: #fff;
+}
+
+/* BOTÕES DO MODAL */
+.icon-verde {
+    color: #3B8962;
+}
+
+.btn-cancelar-modal {
+    background-color: #A51313;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+}
+.btn-cancelar-modal:hover {
+    background-color: #7a0d0d;
+    color: #fff;
+}
+
+.btn-editar-modal {
+    background-color: #79690A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+}
+.btn-editar-modal:hover {
+    background-color: #5c5008;
+    color: #fff;
+}
+
+/* AULA AGENDADA - PROFESSOR */
+/* ==================================================
+   ESTILOS EXCLUSIVOS DA ÁREA MAIN (Não afeta o Header)
+================================================== */
+
+/* Ajustes dos ícones */
+main .icon-verde {
+    color: #3B8962 !important;
+}
+
+/* Campos de Input isolados apenas para o main */
+main .input-custom, 
+main #area-filtros .form-control {
+    border-color: #d1d1d1;
+    border-radius: 5px;
+}
+main .input-custom:focus, 
+main #area-filtros .form-control:focus {
+    border-color: #3B8962;
+    box-shadow: 0 0 0 0.2rem rgba(59, 137, 98, 0.25);
+}
+
+/* Animação suave nos cards de aula */
+main .card-conteudo {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+main .card-conteudo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08) !important;
+}
+
+/* Botões do Card e do Formulário isolados */
+main .btn-cancelar-card {
+    background-color: #A51313;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+main .btn-cancelar-card:hover {
+    background-color: #7a0d0d;
+    color: #fff;
+}
+
+main .btn-editar-card {
+    background-color: #79690A;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+main .btn-editar-card:hover {
+    background-color: #5c5008;
+    color: #fff;
+}
+
+main .btn-salvar-card {
+    background-color: #3B8962;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+main .btn-salvar-card:hover {
+    background-color: #2f6d4e;
+    color: #fff;
+}
+
+/* GERENCIAMENTO ALUNOS */
+/* ==================================================
+   ESTILOS EXCLUSIVOS DA ÁREA MAIN (Gerenciamento de Alunos)
+================================================== */
+
+/* Input customizado do formulário e pesquisa */
+main .input-custom,
+main #area-pesquisa .form-control {
+    border-color: #d1d1d1;
+    border-radius: 5px;
+    font-size: 15px;
+}
+main .input-custom:focus,
+main #area-pesquisa .form-control:focus {
+    border-color: #3B8962;
+    box-shadow: 0 0 0 0.2rem rgba(59, 137, 98, 0.25);
+}
+
+/* Customização da Tabela */
+main .tabela-usuarios th {
+    background-color: #f8f9fa; /* Mantém o topo leve e profissional */
+    border-bottom: 2px solid #dee2e6 !important;
+}
+main .tabela-usuarios td {
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 15px;
+    padding: 15px 10px; /* Mais espaço para respiro */
+}
+
+/* Botões de Ação na Tabela (Ícones de Lápis e Lixeira) */
+main .btn-acao {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    transition: 0.2s;
+    font-size: 16px;
+}
+main .btn-editar {
+    color: #857223;
+}
+main .btn-editar:hover {
+    background-color: rgba(133, 114, 35, 0.1);
+    border-radius: 5px;
+    color: #6a5a1c;
+}
+main .btn-excluir {
+    color: #A51313;
+}
+main .btn-excluir:hover {
+    background-color: rgba(165, 19, 19, 0.1);
+    border-radius: 5px;
+    color: #7a0d0d;
+}
+
+/* Botões de Salvar e Cancelar do Formulário */
+main .btn-cancelar-form {
+    background-color: #A51313;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-weight: 500;
+}
+main .btn-cancelar-form:hover {
+    background-color: #7a0d0d;
+    color: #fff;
+}
+
+main .btn-salvar-form {
+    background-color: #3B8962;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-weight: 500;
+}
+main .btn-salvar-form:hover {
+    background-color: #2f6d4e;
+    color: #fff;
+}
+
+/* AULA EXPERIMENTAL ALUNO */
+
+/* ==================================================
+   ESTILOS EXCLUSIVOS DA ÁREA MAIN (Listagem de Aulas)
+================================================== */
+
+/* Ícones das informações */
+main .icon-verde {
+    color: #3B8962 !important;
+}
+
+/* Inputs de pesquisa e filtro seguros */
+main #area-filtros .form-control {
+    border-color: #d1d1d1;
+    border-radius: 5px;
+    height: 38px;
+}
+main #area-filtros .form-control:focus {
+    border-color: #3B8962;
+    box-shadow: 0 0 0 0.2rem rgba(59, 137, 98, 0.25);
+}
+
+main .input-group-text {
+    border-color: #d1d1d1;
+    border-radius: 5px 0 0 5px;
+}
+
+/* Animação e design elegante para os cards de aulas */
+main .card-conteudo {
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+}
+main .card-conteudo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* Botão de Inscrição Customizado */
+main #inscrever {
+    width: 120px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #8d7800;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main #inscrever:hover {
+    background-color: #6f5e00;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
